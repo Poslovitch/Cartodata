@@ -1,0 +1,28 @@
+.catalogs {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.catalog {
+  position: relative;
+  width: 320px;
+  height: 320px;
+    background-color: #777;
+}
+
+.catalog div {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  overflow: auto;
+  height: 100%;
+  transition: .4s ease;
+
+  color: #f5deb3;
+
+  border-radius: 5px;
+}

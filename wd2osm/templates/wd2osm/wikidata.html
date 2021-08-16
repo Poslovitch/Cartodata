@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block resources %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/wd2osm.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h2>WD2OSM - Entrez un élément Wikidata</h2>
+
+    <form action="{% url 'wikidata_item' %}" method="post" autocomplete="off">
+    {% csrf_token %}
+    <fieldset>
+        <legend>Élément wikidata</legend>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        <input type="text" size="11" name="wikidata_id" id="wikidata_id" placeholder="Q100001" autocomplete="off">
+        <label for="wikidata_id">Entrez l'id d'un élément Wikidata</label><br>
+    </fieldset>
+    <input type="submit" value="Valider">
+    </form>
+{% endblock %}

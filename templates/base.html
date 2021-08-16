@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Cartodata</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    {% block resources %}{% endblock %}
+</head>
+<body>
+    <header>
+        <nav>
+            <a id="main-logo" href="/">
+                <img src="{% static 'img/cartodata_logo.svg' %}">
+            </a>
+            <div>
+                <ul>
+                    <li><a href="">Dashboard</a></li>
+                    <li><a href="">En savoir plus</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+    <footer>
+        <div class="info-wlm">
+            <p>À propos de Wiki Loves Monuments</p>
+        </div>
+        <div class="credits">
+            <p>Crédits :</p>
+            <ul>
+                <li><a href="https://commons.wikimedia.org/wiki/File:Circle-icons-map.svg">Elegant Themes</a>, <a href="http://www.gnu.org/licenses/gpl.html">GPL</a>, via Wikimedia Commons</li>
+                <li><a href="https://commons.wikimedia.org/wiki/File:20120420_wikidata13.svg">Benbois</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons</li>
+            </ul>
+        </div>
+        <img id="wikidata-stamp" src="{% static 'img/Wikidata_Stamp_Rec_Dark.svg' %}">
+    </footer>
+</body>
+</html>

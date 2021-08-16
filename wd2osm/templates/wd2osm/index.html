@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block resources %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/wd2osm.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h2>WD2OSM</h2>
+    <h3>Catalogues</h3>
+        <ul class="catalogs">
+            {% for catalog in catalogs %}
+                <li class="catalog">
+                    <p><a href="{% url 'catalog' catalog.id %}">{{ catalog.name }}</a></p>
+                </li>
+            {% endfor %}
+        </ul>
+{% endblock %}

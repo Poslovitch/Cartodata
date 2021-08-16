@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block resources %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/wd2osm.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h2>WD2OSM</h2>
+    <h3>{{ wikidata }}</h3>
+    <p>Coordonnées trouvées : {{ coordinates }}</p>
+    <ul>
+    {% for osm_element in osm %}
+        <li><a href="https://www.openstreetmap.org/way/{{ osm_element }}">{{ osm_element }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}
