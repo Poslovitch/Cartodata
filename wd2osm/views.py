@@ -60,8 +60,11 @@ def wikidata_item(request):
         osm_elements = osm_contents["elements"]
 
         osm_links = []
+        osm_nodes = []
         for element in osm_elements:
             if element["type"] == "way":
                 osm_links.append(element["id"])
+            if element["type"] == "node":
+                osm_nodes.append([element["lat"], element["lon"]])
 
-        return render(request, 'wd2osm/wikidata_item.html', {'wikidata': wikidata_id, 'coordinates': coords, 'osm': osm_links})
+        return render(request, 'wd2osm/wikidata_item.html', {'wikidata': wikidata_id, 'coordinates': coords, 'osm': osm_links, 'nodes': osm_nodes})
